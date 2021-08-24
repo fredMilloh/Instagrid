@@ -15,6 +15,7 @@ class GridView: UIView {
     
     var currentButton: (() -> Void)? = nil
     private var currentTag = 0
+    
     var styleLayout: StyleLayout = .layout1 {
         didSet {
             setStyleGrid(styleLayout)
@@ -22,9 +23,7 @@ class GridView: UIView {
     }
     var currentImage: UIImage = UIImage() {
         didSet {
-            gridButtons[currentTag].setBackgroundImage(currentImage, for: .normal)
-            //gridButtons[currentTag].contentMode = .center
-            gridButtons[currentTag].contentMode = .scaleAspectFit
+            setBackgroundImage()
         }
     }
     
@@ -84,6 +83,11 @@ extension GridView {
         gridViews.forEach { viewPicture in
             viewPicture.isHidden = false
         }
+    }
+    
+    private func setBackgroundImage() {
+        gridButtons[currentTag].setBackgroundImage(currentImage, for: .normal)
+        gridButtons[currentTag].contentMode = .scaleToFill
     }
     
     // Load Xib GridView

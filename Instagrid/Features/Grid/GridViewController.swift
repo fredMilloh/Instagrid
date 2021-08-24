@@ -88,7 +88,7 @@ extension GridViewController: UIImagePickerControllerDelegate, UINavigationContr
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        if let selectedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+        if let selectedImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage {
             gridView.currentImage = selectedImage
             gridIsEmpty = false
         }

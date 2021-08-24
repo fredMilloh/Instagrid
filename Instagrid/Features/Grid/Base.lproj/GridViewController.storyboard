@@ -62,7 +62,7 @@
                             </label>
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7CO-2z-U1t" userLabel="GridView" customClass="GridView" customModule="Instagrid" customModuleProvider="target">
                                 <rect key="frame" x="35" y="262" width="320" height="320"/>
-                                <color key="backgroundColor" systemColor="systemPinkColor"/>
+                                <color key="backgroundColor" systemColor="systemGray4Color"/>
                                 <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="256" id="6nq-Ey-VbK"/>
@@ -304,16 +304,16 @@
                                 <exclude reference="w0P-kO-Gyb"/>
                                 <exclude reference="7ps-sT-H0R"/>
                                 <exclude reference="zma-rE-2gV"/>
+                                <exclude reference="5jF-ab-DPL"/>
+                                <exclude reference="G6m-jq-x0W"/>
+                                <exclude reference="xe6-he-3cP"/>
                                 <exclude reference="mZO-2d-8y6"/>
                                 <exclude reference="xdD-z4-g6Y"/>
-                                <exclude reference="RzR-V6-o5u"/>
                                 <exclude reference="DrA-se-lXu"/>
                                 <exclude reference="EdH-mX-pBh"/>
                                 <exclude reference="iKS-Rg-0Qc"/>
                                 <exclude reference="z24-Yb-0lw"/>
-                                <exclude reference="5jF-ab-DPL"/>
-                                <exclude reference="G6m-jq-x0W"/>
-                                <exclude reference="xe6-he-3cP"/>
+                                <exclude reference="RzR-V6-o5u"/>
                                 <exclude reference="UMj-lp-gVu"/>
                                 <exclude reference="iD5-91-BXd"/>
                                 <exclude reference="tA9-jq-kpo"/>
@@ -331,12 +331,15 @@
                                 <exclude reference="4zq-zG-azx"/>
                                 <exclude reference="7ps-sT-H0R"/>
                                 <include reference="zma-rE-2gV"/>
+                                <include reference="5jF-ab-DPL"/>
+                                <exclude reference="Fa0-16-3SL"/>
+                                <include reference="G6m-jq-x0W"/>
+                                <exclude reference="tPb-0t-0UM"/>
+                                <include reference="xe6-he-3cP"/>
                                 <exclude reference="h7d-Ad-heh"/>
                                 <exclude reference="mDJ-45-25l"/>
                                 <include reference="mZO-2d-8y6"/>
                                 <include reference="xdD-z4-g6Y"/>
-                                <include reference="RzR-V6-o5u"/>
-                                <exclude reference="iUu-fY-MYy"/>
                                 <exclude reference="7QR-5b-ukC"/>
                                 <include reference="DrA-se-lXu"/>
                                 <exclude reference="EdH-mX-pBh"/>
@@ -345,11 +348,8 @@
                                 <exclude reference="SEB-qL-UYQ"/>
                                 <include reference="iKS-Rg-0Qc"/>
                                 <include reference="z24-Yb-0lw"/>
-                                <include reference="5jF-ab-DPL"/>
-                                <exclude reference="Fa0-16-3SL"/>
-                                <include reference="G6m-jq-x0W"/>
-                                <exclude reference="tPb-0t-0UM"/>
-                                <include reference="xe6-he-3cP"/>
+                                <include reference="RzR-V6-o5u"/>
+                                <exclude reference="iUu-fY-MYy"/>
                                 <exclude reference="LZw-0V-cCi"/>
                                 <exclude reference="Tyc-th-6EY"/>
                                 <include reference="UMj-lp-gVu"/>
@@ -390,8 +390,8 @@
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
-        <systemColor name="systemPinkColor">
-            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <systemColor name="systemGray4Color">
+            <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
