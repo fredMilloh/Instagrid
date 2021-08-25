@@ -15,6 +15,7 @@
 		B60C665926B840C000AC4B7C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B60C665726B840C000AC4B7C /* LaunchScreen.storyboard */; };
 		B60C666326B8447C00AC4B7C /* Delm-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = B60C666226B8447C00AC4B7C /* Delm-Medium.otf */; };
 		B60C666526B8448900AC4B7C /* ThirstySoftRegular.otf in Resources */ = {isa = PBXBuildFile; fileRef = B60C666426B8448900AC4B7C /* ThirstySoftRegular.otf */; };
+		B66B443D26D64C3800E08324 /* Animations.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66B443C26D64C3800E08324 /* Animations.swift */; };
 		B69935A326CE2CCD00573AEF /* GridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69935A226CE2CCD00573AEF /* GridView.swift */; };
 		B69935A526CE2CDF00573AEF /* GridView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B69935A426CE2CDF00573AEF /* GridView.xib */; };
 		B6CBCFF526C103160047BB75 /* PictureDetailController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6CBCFF426C103160047BB75 /* PictureDetailController.storyboard */; };
@@ -33,6 +34,7 @@
 		B60C665A26B840C000AC4B7C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B60C666226B8447C00AC4B7C /* Delm-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Delm-Medium.otf"; sourceTree = "<group>"; };
 		B60C666426B8448900AC4B7C /* ThirstySoftRegular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ThirstySoftRegular.otf; sourceTree = "<group>"; };
+		B66B443C26D64C3800E08324 /* Animations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Animations.swift; path = ../../../../ButtonTest/ButtonTest/Animations.swift; sourceTree = "<group>"; };
 		B69935A226CE2CCD00573AEF /* GridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridView.swift; sourceTree = "<group>"; };
 		B69935A426CE2CDF00573AEF /* GridView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GridView.xib; sourceTree = "<group>"; };
 		B6CBCFF426C103160047BB75 /* PictureDetailController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PictureDetailController.storyboard; sourceTree = "<group>"; };
@@ -94,6 +96,7 @@
 		B60C666B26B85EE400AC4B7C /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				B66B443B26D64C1D00E08324 /* Extensions */,
 				B69935A126CE2CAD00573AEF /* GridView */,
 			);
 			path = Views;
@@ -105,6 +108,14 @@
 				B6CBD01A26C16E710047BB75 /* StyleLayout.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		B66B443B26D64C1D00E08324 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				B66B443C26D64C3800E08324 /* Animations.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		B69935A126CE2CAD00573AEF /* GridView */ = {
@@ -232,6 +243,7 @@
 				B60C664F26B840BD00AC4B7C /* SceneDelegate.swift in Sources */,
 				B6CBCFF726C103380047BB75 /* PictureDetailController.swift in Sources */,
 				B6CBD01B26C16E710047BB75 /* StyleLayout.swift in Sources */,
+				B66B443D26D64C3800E08324 /* Animations.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

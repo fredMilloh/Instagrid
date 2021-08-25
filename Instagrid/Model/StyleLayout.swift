@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum StyleLayout {
-    case layout1, layout2, layout3
+enum StyleLayout: Int {
+    case layout1 = 0, layout2, layout3
 }
 

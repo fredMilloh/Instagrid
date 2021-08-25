@@ -9,14 +9,22 @@ import UIKit
 
 class PictureDetailController: UIViewController {
 
-    @IBOutlet weak var hello: UILabel!
+    @IBOutlet weak var hello: UILabel?
     
+    private var helloTitle: String!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
+    init(title: String) {
+        super.init(nibName: nil, bundle: nil)
+        self.helloTitle = title
+        setUpViews()
     }
     
-
-
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    private func setUpViews() {
+        view.backgroundColor = .white
+        hello?.text = helloTitle
+    }
 }

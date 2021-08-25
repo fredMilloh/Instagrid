@@ -13,7 +13,7 @@ class GridViewController: UIViewController {
     var gridIsEmpty = true
     
     @IBOutlet weak var gridView: GridView!
-    @IBOutlet var layoutSelectedImage: [UIImageView]!
+    @IBOutlet var layoutButtonSelectedMark: [UIImageView]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,23 +22,16 @@ class GridViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        gridView.styleLayout = .layout2
-        setStyleLayout(.layout2)
-        selectImage()
+        setUpGridView()
+        setUpButtons(with: .layout2)
     }
-
+    
     // MARK: - IBActions
     
     @IBAction func switchLayout(_ sender: UIButton) {
-        switch sender.tag {
-        case 0: gridView.styleLayout = .layout1
-            setStyleLayout(.layout1)
-        case 1: gridView.styleLayout = .layout2
-            setStyleLayout(.layout2)
-        case 2: gridView.styleLayout = .layout3
-            setStyleLayout(.layout3)
-        default: break
-        }
+        guard let layout = StyleLayout.init(rawValue: sender.tag) else { return }
+        gridView.styleLayout = layout
+        setUpButtons(with: layout)
     }
     
     @IBAction func swipeGrid(_ sender: UISwipeGestureRecognizer) {
@@ -54,48 +47,46 @@ class GridViewController: UIViewController {
 
 extension GridViewController {
     
-    private func setStyleLayout(_ style: StyleLayout) {
-        switch style {
-        case .layout1:
-            hideLayoutSelectedImage()
-            layoutSelectedImage[0].isHidden = false
-        case .layout2:
-            hideLayoutSelectedImage()
-            layoutSelectedImage[1].isHidden = false
-        case .layout3:
-            hideLayoutSelectedImage()
-            layoutSelectedImage[2].isHidden = false
-        }
-    }
-    
-    private func hideLayoutSelectedImage() {
-        layoutSelectedImage.forEach { selectedImage in
-            selectedImage.isHidden = true
-        }
-    }
-}
-
-// MARK: - ImagePicker
-
-extension GridViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-    
-    private func selectImage() {
-        gridView.currentButton = {
+    private func setUpGridView() {
+        gridView.styleLayout = .layout2
+        
+        gridView.buttonAction = {
             self.imagePicker.allowsEditing = true
             self.imagePicker.sourceType = .photoLibrary
             self.present(self.imagePicker, animated: true)
         }
     }
     
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        if let selectedImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage {
-            gridView.currentImage = selectedImage
-            gridIsEmpty = false
+    private func setUpButtons(with style: StyleLayout) {
+        switch style {
+        case .layout1:
+            hideLayoutSelectedImage()
+            layoutButtonSelectedMark[0].isHidden = false
+        case .layout2:
+            hideLayoutSelectedImage()
+            layoutButtonSelectedMark[1].isHidden = false
+        case .layout3:
+            hideLayoutSelectedImage()
+            layoutButtonSelectedMark[2].isHidden = false
         }
-        dismiss(animated: true, completion: nil)
     }
     
-    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+    private func hideLayoutSelectedImage() {
+        layoutButtonSelectedMark.forEach { selectedImage in
+            selectedImage.isHidden = true
+        }
+    }
+}
+
+// MARK: - UIImagePicker
+
+extension GridViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let selectedImage = info[.editedImage] as? UIImage {
+            gridView.set(image: selectedImage)
+            gridIsEmpty = false
+        }
         dismiss(animated: true, completion: nil)
     }
     
@@ -106,27 +97,21 @@ extension GridViewController: UIImagePickerControllerDelegate, UINavigationContr
 extension GridViewController {
     
     private func swipe(by direction: UISwipeGestureRecognizer.Direction) {
+        let screenHeight = UIScreen.main.bounds.height
+        let destinationUp = CGAffineTransform(translationX: 0, y: -screenHeight)
+        
+        let screenWidth = UIScreen.main.bounds.width
+        let destinationLeft = CGAffineTransform(translationX: -screenWidth, y: 0)
+        
         switch direction {
-        case .up: swipeUpGridView()
-        case .left: swipeLeftGridView()
+        case .up: sendGridView(destinationUp)
+        case .left: sendGridView(destinationLeft)
         default: break
         }
     }
-    // Swipe Up
-    private func swipeUpGridView() {
-        let screenHeight = UIScreen.main.bounds.height
-        let transform = CGAffineTransform(translationX: 0, y: -screenHeight)
-        sendGridView(transform)
-    }
-    // Swipe Left
-    private func swipeLeftGridView() {
-        let screenWidth = UIScreen.main.bounds.width
-        let transform = CGAffineTransform(translationX: -screenWidth, y: 0)
-        sendGridView(transform)
-    }
-
+    
     private func sendGridView(_ transform: CGAffineTransform) {
-        UIView.animate(withDuration: 0.5) {
+        gridView.animation {
             self.gridView.transform = transform
         } completion: { (true) in
             self.shareGridView()
@@ -139,23 +124,21 @@ extension GridViewController {
 extension GridViewController {
         
     private func shareGridView() {
-    
-        let gridPictures = gridView.asImage()
-        let activityController = UIActivityViewController(activityItems: [gridPictures],
-                                                          applicationActivities: nil)
+        let gridPicture = gridView.asImage()
+        let activityController = UIActivityViewController(activityItems: [gridPicture], applicationActivities: nil)
         self.present(activityController, animated: true)
-        // The completion handler to execute after the activity view controller is dismissed.DevDoc
-        activityController.completionWithItemsHandler = { (activity, success, items, error) in
+        
+        activityController.completionWithItemsHandler = { [self] (_, success, _, _) in
             if success {
-                UIView.animate(withDuration: 0.7, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0.8, options: [], animations: {
+                gridView.animation({
                     self.gridView.transform = .identity
                     self.gridView.emptyGrid()
                     self.gridView.styleLayout = .layout2
-                    self.setStyleLayout(.layout2)
+                    self.setUpButtons(with: .layout2)
                     self.gridIsEmpty = true
                 }, completion: nil)
             }
-            UIView.animate(withDuration: 0.7, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.5, options: [], animations: {
+            gridView.animation({
                 self.gridView.transform = .identity
             }, completion: nil)
         }
@@ -183,3 +166,4 @@ extension GridViewController {
         present(alertVC, animated: true)
     }
 }
+

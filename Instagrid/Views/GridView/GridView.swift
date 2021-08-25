@@ -9,21 +9,16 @@ import UIKit
 
 class GridView: UIView {
     
-    @IBOutlet var contentView: UIView!
+    @IBOutlet private var contentView: UIView!
     @IBOutlet private var gridViews: [UIView]!
     @IBOutlet private var gridButtons: [UIButton]!
     
-    var currentButton: (() -> Void)? = nil
+    var buttonAction: (() -> Void)?
     private var currentTag = 0
     
     var styleLayout: StyleLayout = .layout1 {
         didSet {
             setStyleGrid(styleLayout)
-        }
-    }
-    var currentImage: UIImage = UIImage() {
-        didSet {
-            setBackgroundImage()
         }
     }
     
@@ -55,10 +50,18 @@ class GridView: UIView {
 // MARK: - IBAction
     
     @IBAction func chooseImage(_ sender: UIButton) {
-        if let currentButton = self.currentButton {
-            currentButton()
-        }
+        buttonAction?()
         currentTag = sender.tag
+    }
+}
+
+// MARK: - Public Methods
+
+extension GridView {
+    
+    func set(image: UIImage) {
+        gridButtons[currentTag].setBackgroundImage(image, for: .normal)
+        gridButtons[currentTag].contentMode = .scaleToFill
     }
 }
 
@@ -83,11 +86,6 @@ extension GridView {
         gridViews.forEach { viewPicture in
             viewPicture.isHidden = false
         }
-    }
-    
-    private func setBackgroundImage() {
-        gridButtons[currentTag].setBackgroundImage(currentImage, for: .normal)
-        gridButtons[currentTag].contentMode = .scaleToFill
     }
     
     // Load Xib GridView
