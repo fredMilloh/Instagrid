@@ -34,10 +34,14 @@ class GridViewController: UIViewController {
     }
     
     @IBAction func swipeGrid(_ sender: UISwipeGestureRecognizer) {
-        if gridIsEmpty {
-            showAlertEmptyGrid(with: sender.direction)
-        } else {
-            swipe(by: sender.direction)
+        let orientationDevice = UIDevice.current.orientation
+        let direction = sender.direction
+        
+        if orientationDevice.isPortrait && direction == .up {
+            gridIsEmpty ? showAlertEmptyGrid(with: .up) : swipe(by: .up)
+        }
+        if orientationDevice.isLandscape && direction == .left {
+            gridIsEmpty ? showAlertEmptyGrid(with: .left) : swipe(by: .left)
         }
     }
 }
@@ -99,7 +103,7 @@ extension GridViewController: UIImagePickerControllerDelegate, UINavigationContr
 // MARK: - Swipe Grid
 
 extension GridViewController {
-    
+   
     private func swipe(by direction: UISwipeGestureRecognizer.Direction) {
         let screenHeight = UIScreen.main.bounds.height
         let destinationUp = CGAffineTransform(translationX: 0, y: -screenHeight)

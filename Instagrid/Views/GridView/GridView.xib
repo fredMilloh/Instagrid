@@ -14,10 +14,10 @@
                 <outletCollection property="gridViews" destination="Jj0-po-WxO" collectionClass="NSMutableArray" id="hFb-a5-eEA"/>
                 <outletCollection property="gridViews" destination="d0g-YB-KhA" collectionClass="NSMutableArray" id="VPL-Ye-c05"/>
                 <outletCollection property="gridViews" destination="aOe-aT-WT3" collectionClass="NSMutableArray" id="tBd-dp-aiA"/>
-                <outletCollection property="gridButtons" destination="Peh-jK-fGp" collectionClass="NSMutableArray" id="Ald-YH-Hlg"/>
-                <outletCollection property="gridButtons" destination="0gO-7C-fx7" collectionClass="NSMutableArray" id="0Wq-3i-ZbJ"/>
-                <outletCollection property="gridButtons" destination="8eO-3j-rZ1" collectionClass="NSMutableArray" id="FrB-Zs-olF"/>
-                <outletCollection property="gridButtons" destination="EDd-pQ-TjJ" collectionClass="NSMutableArray" id="hgi-hA-89e"/>
+                <outletCollection property="gridImages" destination="kLR-42-StA" collectionClass="NSMutableArray" id="3FF-j9-yho"/>
+                <outletCollection property="gridImages" destination="Hvm-pa-UAB" collectionClass="NSMutableArray" id="NW1-co-QqV"/>
+                <outletCollection property="gridImages" destination="zuI-CH-OvT" collectionClass="NSMutableArray" id="26G-3b-kmY"/>
+                <outletCollection property="gridImages" destination="Z1V-uq-FuC" collectionClass="NSMutableArray" id="Nkd-ws-R0f"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -36,8 +36,9 @@
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="more" translatesAutoresizingMaskIntoConstraints="NO" id="k4f-sP-8zq">
                                             <rect key="frame" x="43" y="43" width="66.5" height="66.5"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </imageView>
-                                        <button autoresizesSubviews="NO" opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Peh-jK-fGp" userLabel="gridButton 1">
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Peh-jK-fGp" userLabel="gridButton 1">
                                             <rect key="frame" x="0.0" y="0.0" width="152.5" height="152.5"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <state key="normal" title="pictureButton1">
@@ -47,13 +48,20 @@
                                                 <action selector="chooseImage:" destination="-1" eventType="touchUpInside" id="unf-G1-dEu"/>
                                             </connections>
                                         </button>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kLR-42-StA">
+                                            <rect key="frame" x="0.0" y="0.0" width="152.5" height="152.5"/>
+                                        </imageView>
                                     </subviews>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     <constraints>
                                         <constraint firstItem="Peh-jK-fGp" firstAttribute="top" secondItem="BuN-Sd-fCZ" secondAttribute="top" id="6dA-FB-031"/>
                                         <constraint firstAttribute="trailing" secondItem="k4f-sP-8zq" secondAttribute="trailing" constant="43" id="DhC-pE-sld"/>
                                         <constraint firstItem="k4f-sP-8zq" firstAttribute="top" secondItem="BuN-Sd-fCZ" secondAttribute="top" constant="43" id="NSY-20-lJu"/>
+                                        <constraint firstItem="kLR-42-StA" firstAttribute="top" secondItem="BuN-Sd-fCZ" secondAttribute="top" id="Yto-B4-jHJ"/>
                                         <constraint firstAttribute="bottom" secondItem="k4f-sP-8zq" secondAttribute="bottom" constant="43" id="bYk-IE-t6U"/>
+                                        <constraint firstAttribute="trailing" secondItem="kLR-42-StA" secondAttribute="trailing" id="eYt-PV-FnW"/>
+                                        <constraint firstAttribute="bottom" secondItem="kLR-42-StA" secondAttribute="bottom" id="j3t-vH-B6Z"/>
+                                        <constraint firstItem="kLR-42-StA" firstAttribute="leading" secondItem="BuN-Sd-fCZ" secondAttribute="leading" id="nAT-5S-pvP"/>
                                         <constraint firstAttribute="trailing" secondItem="Peh-jK-fGp" secondAttribute="trailing" id="oJB-wn-QeP"/>
                                         <constraint firstItem="k4f-sP-8zq" firstAttribute="leading" secondItem="BuN-Sd-fCZ" secondAttribute="leading" constant="43" id="wHT-se-Nix"/>
                                         <constraint firstAttribute="bottom" secondItem="Peh-jK-fGp" secondAttribute="bottom" id="zZO-ub-zvD"/>
@@ -66,7 +74,7 @@
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="1" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="more" translatesAutoresizingMaskIntoConstraints="NO" id="ST8-GN-nQQ">
                                             <rect key="frame" x="43" y="43" width="66.5" height="66.5"/>
                                         </imageView>
-                                        <button opaque="NO" tag="1" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0gO-7C-fx7" userLabel="gridButton 2">
+                                        <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0gO-7C-fx7" userLabel="gridButton 2">
                                             <rect key="frame" x="0.0" y="0.0" width="152.5" height="152.5"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <state key="normal" title="pictureButton2">
@@ -76,17 +84,24 @@
                                                 <action selector="chooseImage:" destination="-1" eventType="touchUpInside" id="nXI-NK-vtt"/>
                                             </connections>
                                         </button>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Hvm-pa-UAB">
+                                            <rect key="frame" x="0.0" y="0.0" width="152.5" height="152.5"/>
+                                        </imageView>
                                     </subviews>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     <constraints>
+                                        <constraint firstItem="Hvm-pa-UAB" firstAttribute="leading" secondItem="Jj0-po-WxO" secondAttribute="leading" id="3H5-Ka-tXo"/>
                                         <constraint firstAttribute="trailing" secondItem="ST8-GN-nQQ" secondAttribute="trailing" constant="43" id="Kvd-MG-H7n"/>
                                         <constraint firstItem="0gO-7C-fx7" firstAttribute="top" secondItem="Jj0-po-WxO" secondAttribute="top" id="M6H-4f-hvs"/>
                                         <constraint firstAttribute="bottom" secondItem="ST8-GN-nQQ" secondAttribute="bottom" constant="43" id="Otd-Cb-gms"/>
+                                        <constraint firstAttribute="trailing" secondItem="Hvm-pa-UAB" secondAttribute="trailing" id="Tap-K3-akW"/>
                                         <constraint firstItem="0gO-7C-fx7" firstAttribute="leading" secondItem="Jj0-po-WxO" secondAttribute="leading" id="agp-wo-6Rr"/>
                                         <constraint firstItem="ST8-GN-nQQ" firstAttribute="top" secondItem="Jj0-po-WxO" secondAttribute="top" constant="43" id="kNF-gU-zTl"/>
                                         <constraint firstItem="ST8-GN-nQQ" firstAttribute="leading" secondItem="Jj0-po-WxO" secondAttribute="leading" constant="43" id="lZA-Gd-5NY"/>
                                         <constraint firstAttribute="trailing" secondItem="0gO-7C-fx7" secondAttribute="trailing" id="myX-L6-kvk"/>
                                         <constraint firstAttribute="bottom" secondItem="0gO-7C-fx7" secondAttribute="bottom" id="vvx-2r-db6"/>
+                                        <constraint firstItem="Hvm-pa-UAB" firstAttribute="top" secondItem="Jj0-po-WxO" secondAttribute="top" id="xOu-8d-r2r"/>
+                                        <constraint firstAttribute="bottom" secondItem="Hvm-pa-UAB" secondAttribute="bottom" id="zRD-K1-uog"/>
                                     </constraints>
                                 </view>
                             </subviews>
@@ -116,17 +131,24 @@
                                                 <action selector="chooseImage:" destination="-1" eventType="touchUpInside" id="P1R-um-4BZ"/>
                                             </connections>
                                         </button>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zuI-CH-OvT">
+                                            <rect key="frame" x="0.0" y="0.0" width="152.5" height="152.5"/>
+                                        </imageView>
                                     </subviews>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     <constraints>
                                         <constraint firstAttribute="bottom" secondItem="8eO-3j-rZ1" secondAttribute="bottom" id="2Qm-Tg-1w6"/>
+                                        <constraint firstAttribute="bottom" secondItem="zuI-CH-OvT" secondAttribute="bottom" id="5kl-O4-IhT"/>
                                         <constraint firstItem="8eO-3j-rZ1" firstAttribute="leading" secondItem="d0g-YB-KhA" secondAttribute="leading" id="CcU-qP-dD7"/>
+                                        <constraint firstItem="zuI-CH-OvT" firstAttribute="leading" secondItem="d0g-YB-KhA" secondAttribute="leading" id="MCd-Hg-n0d"/>
                                         <constraint firstItem="K4v-Uf-y9I" firstAttribute="top" secondItem="d0g-YB-KhA" secondAttribute="top" constant="43" id="OYx-fF-aAH"/>
+                                        <constraint firstItem="zuI-CH-OvT" firstAttribute="top" secondItem="d0g-YB-KhA" secondAttribute="top" id="SpW-Fm-dIh"/>
                                         <constraint firstItem="8eO-3j-rZ1" firstAttribute="top" secondItem="d0g-YB-KhA" secondAttribute="top" id="X7d-Xg-OD8"/>
                                         <constraint firstAttribute="trailing" secondItem="K4v-Uf-y9I" secondAttribute="trailing" constant="43" id="dIG-Nf-POI"/>
                                         <constraint firstItem="K4v-Uf-y9I" firstAttribute="leading" secondItem="d0g-YB-KhA" secondAttribute="leading" constant="43" id="rJf-cY-rt3"/>
                                         <constraint firstAttribute="bottom" secondItem="K4v-Uf-y9I" secondAttribute="bottom" constant="43" id="rzl-pc-rxQ"/>
                                         <constraint firstAttribute="trailing" secondItem="8eO-3j-rZ1" secondAttribute="trailing" id="wPy-bi-4bK"/>
+                                        <constraint firstAttribute="trailing" secondItem="zuI-CH-OvT" secondAttribute="trailing" id="wnd-X3-wBW"/>
                                     </constraints>
                                 </view>
                                 <view tag="3" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aOe-aT-WT3" userLabel="GridView 4">
@@ -135,7 +157,7 @@
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="3" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="more" translatesAutoresizingMaskIntoConstraints="NO" id="joS-7S-6EB">
                                             <rect key="frame" x="43" y="43" width="66.5" height="66.5"/>
                                         </imageView>
-                                        <button opaque="NO" tag="3" contentMode="redraw" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EDd-pQ-TjJ" userLabel="gridButton 4">
+                                        <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EDd-pQ-TjJ" userLabel="gridButton 4">
                                             <rect key="frame" x="0.0" y="0.0" width="152.5" height="152.5"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="18"/>
@@ -146,13 +168,20 @@
                                                 <action selector="chooseImage:" destination="-1" eventType="touchUpInside" id="e65-Yx-Mm0"/>
                                             </connections>
                                         </button>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Z1V-uq-FuC">
+                                            <rect key="frame" x="0.0" y="0.0" width="152.5" height="152.5"/>
+                                        </imageView>
                                     </subviews>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     <constraints>
                                         <constraint firstAttribute="bottom" secondItem="joS-7S-6EB" secondAttribute="bottom" constant="43" id="3LR-oH-Wf1"/>
                                         <constraint firstAttribute="trailing" secondItem="EDd-pQ-TjJ" secondAttribute="trailing" id="5Z6-Mo-Rwp"/>
                                         <constraint firstAttribute="bottom" secondItem="EDd-pQ-TjJ" secondAttribute="bottom" id="QWu-Zx-Exe"/>
+                                        <constraint firstAttribute="trailing" secondItem="Z1V-uq-FuC" secondAttribute="trailing" id="RKT-I4-N5R"/>
                                         <constraint firstItem="EDd-pQ-TjJ" firstAttribute="leading" secondItem="aOe-aT-WT3" secondAttribute="leading" id="SQo-8g-1lz"/>
+                                        <constraint firstItem="Z1V-uq-FuC" firstAttribute="top" secondItem="aOe-aT-WT3" secondAttribute="top" id="Uoi-fo-Pso"/>
+                                        <constraint firstItem="Z1V-uq-FuC" firstAttribute="leading" secondItem="aOe-aT-WT3" secondAttribute="leading" id="YwN-ag-OOh"/>
+                                        <constraint firstAttribute="bottom" secondItem="Z1V-uq-FuC" secondAttribute="bottom" id="cDn-Im-0bq"/>
                                         <constraint firstAttribute="trailing" secondItem="joS-7S-6EB" secondAttribute="trailing" constant="43" id="jJ0-j6-xEv"/>
                                         <constraint firstItem="joS-7S-6EB" firstAttribute="leading" secondItem="aOe-aT-WT3" secondAttribute="leading" constant="43" id="lgM-Dr-hXs"/>
                                         <constraint firstItem="EDd-pQ-TjJ" firstAttribute="top" secondItem="aOe-aT-WT3" secondAttribute="top" id="mRB-q2-RBF"/>
@@ -187,7 +216,7 @@
                 <constraint firstItem="yV0-5C-XA1" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="15" id="yxG-FJ-aBL"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="-220" y="-248"/>
+            <point key="canvasLocation" x="-220.28985507246378" y="-248.4375"/>
         </view>
     </objects>
     <resources>

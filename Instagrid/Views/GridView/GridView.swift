@@ -11,7 +11,7 @@ class GridView: UIView {
     
     @IBOutlet private var contentView: UIView!
     @IBOutlet private var gridViews: [UIView]!
-    @IBOutlet private var gridButtons: [UIButton]!
+    @IBOutlet private var gridImages: [UIImageView]!
     
     var buttonAction: (() -> Void)?
     private var currentTag = 0
@@ -34,9 +34,9 @@ class GridView: UIView {
     
     // After sharing a grid, new empty grid
     func emptyGrid() {
-        guard let gridButtons = gridButtons else { return }
-        gridButtons.forEach { button in
-            button.setBackgroundImage(nil, for: .normal)
+        guard let gridImages = gridImages else { return }
+        gridImages.forEach { imageView in
+            imageView.image = UIImage()
         }
     }
     
@@ -60,8 +60,8 @@ class GridView: UIView {
 extension GridView {
     
     func set(image: UIImage) {
-        gridButtons[currentTag].setBackgroundImage(image, for: .normal)
-        gridButtons[currentTag].contentMode = .scaleToFill
+        gridImages[currentTag].image = image
+        gridImages[currentTag].contentMode = .scaleAspectFill
     }
 }
 

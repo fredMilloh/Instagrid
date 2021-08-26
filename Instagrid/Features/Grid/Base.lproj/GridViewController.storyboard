@@ -225,7 +225,7 @@
                                 </variation>
                             </stackView>
                             <label opaque="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Swipe left to share" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="none" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="phr-sC-cqd">
-                                <rect key="frame" x="13" y="155" width="32" height="60"/>
+                                <rect key="frame" x="40" y="143" width="96" height="60"/>
                                 <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="jnD-pS-EoC">
@@ -353,8 +353,8 @@
                             </mask>
                         </variation>
                         <connections>
-                            <outletCollection property="gestureRecognizers" destination="QbQ-GS-VgN" appends="YES" id="eBQ-1m-5li"/>
-                            <outletCollection property="gestureRecognizers" destination="0gE-Ir-NZM" appends="YES" id="MA0-OB-RCk"/>
+                            <outletCollection property="gestureRecognizers" destination="QoG-PZ-66w" appends="YES" id="ezQ-2E-eVF"/>
+                            <outletCollection property="gestureRecognizers" destination="luL-KV-nJO" appends="YES" id="kmM-PP-yuD"/>
                         </connections>
                     </view>
                     <navigationItem key="navigationItem" id="sOv-Tn-jFE"/>
@@ -366,14 +366,14 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <swipeGestureRecognizer direction="up" id="QbQ-GS-VgN" userLabel="Swipe UP Gesture">
+                <swipeGestureRecognizer direction="up" id="QoG-PZ-66w" userLabel="Swipe Up Gesture">
                     <connections>
-                        <action selector="swipeGrid:" destination="BYZ-38-t0r" id="dyX-yE-zzm"/>
+                        <action selector="swipeGrid:" destination="BYZ-38-t0r" id="48A-WJ-ICJ"/>
                     </connections>
                 </swipeGestureRecognizer>
-                <swipeGestureRecognizer direction="left" id="0gE-Ir-NZM" userLabel="Swipe LEFT Gesture">
+                <swipeGestureRecognizer direction="left" id="luL-KV-nJO" userLabel="Swipe Left Gesture">
                     <connections>
-                        <action selector="swipeGrid:" destination="BYZ-38-t0r" id="js1-WS-eIh"/>
+                        <action selector="swipeGrid:" destination="BYZ-38-t0r" id="RDa-VJ-UOJ"/>
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
