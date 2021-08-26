@@ -132,9 +132,10 @@ extension GridViewController {
             if success {
                 gridView.animation({
                     self.gridView.transform = .identity
-                    self.gridView.emptyGrid()
-                    self.gridView.styleLayout = .layout2
-                    self.setUpButtons(with: .layout2)
+                    
+                    //self.gridView.emptyGrid()
+                    //self.gridView.styleLayout = .layout2
+                    //self.setUpButtons(with: .layout2)
                     self.gridIsEmpty = true
                 }, completion: nil)
             }
