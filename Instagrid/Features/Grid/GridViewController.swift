@@ -23,7 +23,6 @@ class GridViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         setUpGridView()
-        setUpButtons(with: .layout2)
     }
     
     // MARK: - IBActions
@@ -48,12 +47,17 @@ class GridViewController: UIViewController {
 extension GridViewController {
     
     private func setUpGridView() {
+        gridView.transform = .identity
+        gridView.emptyGrid()
         gridView.styleLayout = .layout2
+        setUpButtons(with: .layout2)
         
         gridView.buttonAction = {
             self.imagePicker.allowsEditing = true
             self.imagePicker.sourceType = .photoLibrary
-            self.present(self.imagePicker, animated: true)
+            DispatchQueue.main.async {
+                self.present(self.imagePicker, animated: true)
+            }
         }
     }
     
@@ -125,17 +129,14 @@ extension GridViewController {
         
     private func shareGridView() {
         let gridPicture = gridView.asImage()
-        let activityController = UIActivityViewController(activityItems: [gridPicture], applicationActivities: nil)
+        let activityController = UIActivityViewController(activityItems: [gridPicture],
+                                                          applicationActivities: nil)
         self.present(activityController, animated: true)
         
         activityController.completionWithItemsHandler = { [self] (_, success, _, _) in
             if success {
                 gridView.animation({
-                    self.gridView.transform = .identity
-                    
-                    //self.gridView.emptyGrid()
-                    //self.gridView.styleLayout = .layout2
-                    //self.setUpButtons(with: .layout2)
+                    self.setUpGridView()
                     self.gridIsEmpty = true
                 }, completion: nil)
             }

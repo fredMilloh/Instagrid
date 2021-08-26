@@ -56,9 +56,6 @@
                                 <variation key="heightClass=compact-widthClass=regular">
                                     <color key="textColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </variation>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="7Ws-XW-C2H" appends="YES" id="Llg-ue-BrT"/>
-                                </connections>
                             </label>
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7CO-2z-U1t" userLabel="GridView" customClass="GridView" customModule="Instagrid" customModuleProvider="target">
                                 <rect key="frame" x="29" y="153" width="262" height="262"/>
@@ -248,13 +245,11 @@
                                         <include reference="jnD-pS-EoC"/>
                                     </mask>
                                 </variation>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="PWY-sw-x5h" appends="YES" id="Fqn-tG-B06"/>
-                                </connections>
                             </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="0.74269431829999999" green="0.83844012020000003" blue="0.89020478729999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ivC-Ra-R5C" secondAttribute="bottom" constant="40" id="4zq-zG-azx"/>
                             <constraint firstItem="Yjh-Tx-FAO" firstAttribute="centerX" secondItem="7CO-2z-U1t" secondAttribute="centerX" id="5jF-ab-DPL"/>
@@ -357,6 +352,10 @@
                                 <include reference="tA9-jq-kpo"/>
                             </mask>
                         </variation>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="QbQ-GS-VgN" appends="YES" id="eBQ-1m-5li"/>
+                            <outletCollection property="gestureRecognizers" destination="0gE-Ir-NZM" appends="YES" id="MA0-OB-RCk"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" id="sOv-Tn-jFE"/>
                     <connections>
@@ -367,14 +366,14 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <swipeGestureRecognizer direction="up" id="7Ws-XW-C2H" userLabel="Swipe Up Gesture">
+                <swipeGestureRecognizer direction="up" id="QbQ-GS-VgN" userLabel="Swipe UP Gesture">
                     <connections>
-                        <action selector="swipeGrid:" destination="BYZ-38-t0r" id="QNg-TV-RgK"/>
+                        <action selector="swipeGrid:" destination="BYZ-38-t0r" id="dyX-yE-zzm"/>
                     </connections>
                 </swipeGestureRecognizer>
-                <swipeGestureRecognizer direction="left" id="PWY-sw-x5h" userLabel="Swipe Left Gesture">
+                <swipeGestureRecognizer direction="left" id="0gE-Ir-NZM" userLabel="Swipe LEFT Gesture">
                     <connections>
-                        <action selector="swipeGrid:" destination="BYZ-38-t0r" id="T1P-aV-jDg"/>
+                        <action selector="swipeGrid:" destination="BYZ-38-t0r" id="js1-WS-eIh"/>
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
