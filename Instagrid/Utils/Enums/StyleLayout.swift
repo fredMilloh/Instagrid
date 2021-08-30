@@ -10,4 +10,3 @@ import Foundation
 enum StyleLayout: Int {
     case layout1 = 0, layout2, layout3
 }
-

@@ -88,12 +88,10 @@ extension GridView {
         }
     }
     
-    // Load Xib GridView
     private func loadXib() {
         Bundle.main.loadNibNamed("GridView", owner: self, options: nil)
         addSubview(contentView)
         contentView.frame = self.bounds
         contentView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
- 
     }
 }

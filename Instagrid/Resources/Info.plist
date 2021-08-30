@@ -60,13 +60,7 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-	<key>UISupportedInterfaceOrientations~ipad</key>
-	<array>
-		<string>UIInterfaceOrientationPortrait</string>
-		<string>UIInterfaceOrientationLandscapeLeft</string>
-		<string>UIInterfaceOrientationLandscapeRight</string>
-	</array>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>&quot;Allow add picture in your library&quot;</string>
+	<string>Allow access to and addition of photos to your library</string>
 </dict>
 </plist>

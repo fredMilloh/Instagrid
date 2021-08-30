@@ -15,7 +15,7 @@
 		B60C665926B840C000AC4B7C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B60C665726B840C000AC4B7C /* LaunchScreen.storyboard */; };
 		B60C666326B8447C00AC4B7C /* Delm-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = B60C666226B8447C00AC4B7C /* Delm-Medium.otf */; };
 		B60C666526B8448900AC4B7C /* ThirstySoftRegular.otf in Resources */ = {isa = PBXBuildFile; fileRef = B60C666426B8448900AC4B7C /* ThirstySoftRegular.otf */; };
-		B6342D9426D78E5F007280BE /* Animations.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6342D9326D78E5F007280BE /* Animations.swift */; };
+		B6342D9426D78E5F007280BE /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6342D9326D78E5F007280BE /* UIView+.swift */; };
 		B69935A326CE2CCD00573AEF /* GridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69935A226CE2CCD00573AEF /* GridView.swift */; };
 		B69935A526CE2CDF00573AEF /* GridView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B69935A426CE2CDF00573AEF /* GridView.xib */; };
 		B6CBD01B26C16E710047BB75 /* StyleLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6CBD01A26C16E710047BB75 /* StyleLayout.swift */; };
@@ -32,7 +32,7 @@
 		B60C665A26B840C000AC4B7C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B60C666226B8447C00AC4B7C /* Delm-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Delm-Medium.otf"; sourceTree = "<group>"; };
 		B60C666426B8448900AC4B7C /* ThirstySoftRegular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ThirstySoftRegular.otf; sourceTree = "<group>"; };
-		B6342D9326D78E5F007280BE /* Animations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animations.swift; sourceTree = "<group>"; };
+		B6342D9326D78E5F007280BE /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
 		B69935A226CE2CCD00573AEF /* GridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridView.swift; sourceTree = "<group>"; };
 		B69935A426CE2CDF00573AEF /* GridView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GridView.xib; sourceTree = "<group>"; };
 		B6CBD01A26C16E710047BB75 /* StyleLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleLayout.swift; sourceTree = "<group>"; };
@@ -70,8 +70,8 @@
 			children = (
 				B60C664C26B840BD00AC4B7C /* AppDelegate.swift */,
 				B60C664E26B840BD00AC4B7C /* SceneDelegate.swift */,
+				B66CBEC926DCB25700B9F4BE /* Utils */,
 				B60C666B26B85EE400AC4B7C /* Views */,
-				B60C666D26B85EFA00AC4B7C /* Model */,
 				B6D4EA9C26C0FF920000D4DD /* Features */,
 				B60C666A26B85ED800AC4B7C /* Resources */,
 			);
@@ -92,26 +92,34 @@
 		B60C666B26B85EE400AC4B7C /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				B66B443B26D64C1D00E08324 /* Extensions */,
 				B69935A126CE2CAD00573AEF /* GridView */,
 			);
 			path = Views;
 			sourceTree = "<group>";
 		};
-		B60C666D26B85EFA00AC4B7C /* Model */ = {
+		B66B443B26D64C1D00E08324 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				B6342D9326D78E5F007280BE /* UIView+.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		B66CBEC926DCB25700B9F4BE /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				B66CBECA26DCB26700B9F4BE /* Enums */,
+				B66B443B26D64C1D00E08324 /* Extensions */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		B66CBECA26DCB26700B9F4BE /* Enums */ = {
 			isa = PBXGroup;
 			children = (
 				B6CBD01A26C16E710047BB75 /* StyleLayout.swift */,
 			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		B66B443B26D64C1D00E08324 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				B6342D9326D78E5F007280BE /* Animations.swift */,
-			);
-			path = Extensions;
+			path = Enums;
 			sourceTree = "<group>";
 		};
 		B69935A126CE2CAD00573AEF /* GridView */ = {
@@ -227,7 +235,7 @@
 				B69935A326CE2CCD00573AEF /* GridView.swift in Sources */,
 				B60C664F26B840BD00AC4B7C /* SceneDelegate.swift in Sources */,
 				B6CBD01B26C16E710047BB75 /* StyleLayout.swift in Sources */,
-				B6342D9426D78E5F007280BE /* Animations.swift in Sources */,
+				B6342D9426D78E5F007280BE /* UIView+.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

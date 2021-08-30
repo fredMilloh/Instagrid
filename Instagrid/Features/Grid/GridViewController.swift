@@ -9,11 +9,11 @@ import UIKit
 
 class GridViewController: UIViewController {
     
-    let imagePicker = UIImagePickerController()
-    var gridIsEmpty = true
-    
     @IBOutlet weak var gridView: GridView!
     @IBOutlet var layoutButtonSelectedMark: [UIImageView]!
+    
+    let imagePicker = UIImagePickerController()
+    var gridIsEmpty = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
