@@ -9,7 +9,7 @@
 -   [License](https://github.com/fredMilloh/Instagrid#license)
 
 ## Introduction
-Share Photo Frame
+Customizable photo frame sharing application.
 
 ## Features
  - The user chooses the style of the photo frame
@@ -42,14 +42,13 @@ Share Photo Frame
 -   Responsive design from a mockup
 
 ## How To Use
-````
-# Clone this repository & go into the repository
-$ git clone https://github.com/fredMilloh/Instagrid
-
-````
+ From your terminal, clone this repository with the following git command : 
+ ````
+ $ git clone https://github.com/fredMilloh/Instagrid
+ ````
 ## License
 
 [MIT License](https://github.com/fredMilloh/Instagrid/blob/master)
 
 ---
-it is a learning project
+application made from a mock, as part of a learning project
