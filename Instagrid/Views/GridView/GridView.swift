@@ -39,6 +39,29 @@ class GridView: UIView {
             imageView.image = UIImage()
         }
     }
+//A COMPLETER
+    func gridIsNotComplete() -> Bool {
+        var hiddenViews = [Bool]()
+        var addedImage = [Bool]()
+        
+        gridViews.forEach { gridView in
+            if !gridView.isHidden {
+                hiddenViews.append(true)
+            }
+        }
+        gridImages.forEach { imageView in
+            let imageSize = imageView.image?.size
+            if (imageSize != nil)  {
+                addedImage.append(true)
+            }
+            print("addedImage + true ==> \(addedImage)")
+        }
+        let imageComplete = addedImage.allSatisfy({ $0 == true })
+        print("image true ==> \(addedImage)")
+        let viewShowned = hiddenViews.allSatisfy({ $0 == true })
+        print("view showned true ==> \(hiddenViews)")
+        return imageComplete && viewShowned
+    }
     
     func asImage() -> UIImage {
         let renderer = UIGraphicsImageRenderer(bounds: bounds)
@@ -61,6 +84,7 @@ extension GridView {
     
     func set(image: UIImage) {
         gridImages[currentTag].image = image
+        print("size selectedImage ==> \(String(describing: gridImages[currentTag].image?.size))")
         gridImages[currentTag].contentMode = .scaleAspectFill
     }
 }
@@ -87,7 +111,7 @@ extension GridView {
             viewPicture.isHidden = false
         }
     }
-    
+            
     private func loadXib() {
         Bundle.main.loadNibNamed("GridView", owner: self, options: nil)
         addSubview(contentView)

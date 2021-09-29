@@ -33,13 +33,11 @@ Customizable photo frame sharing application.
 -   Xcode 12.5
 
 ## Skills
--   Xib
--   UIImagePicker
--   UIActivityViewController
--   UISwipeGestureRecognizer
--   UIAlertController
--   UIView.animate()
--   Responsive design from a mockup
+ - Creating a responsive design from a mockup.
+ - Interpreting gestures on a touch screen.
+ - Set up an architecture adapted to a project.
+ - Xib
+ - Delegate
 
 ## How To Use
  From your terminal, clone this repository with the following git command : 

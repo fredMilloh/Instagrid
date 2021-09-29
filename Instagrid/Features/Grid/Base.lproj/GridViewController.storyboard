@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_0" orientation="landscape" appearance="light"/>
+    <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -21,17 +21,17 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="GridViewController" customModule="Instagrid" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Instagrid" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yjh-Tx-FAO">
-                                <rect key="frame" x="225" y="3" width="118.5" height="39"/>
+                                <rect key="frame" x="101" y="20" width="118.5" height="39"/>
                                 <fontDescription key="fontDescription" name="ThirstySoftRegular" family="Thirsty Soft" pointSize="30"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrowUp" translatesAutoresizingMaskIntoConstraints="NO" id="4v7-G8-41i">
-                                <rect key="frame" x="83" y="110" width="10" height="13"/>
+                                <rect key="frame" x="153.5" y="85" width="13" height="10"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -45,7 +45,7 @@
                                 <variation key="heightClass=compact" image="arrowLeft"/>
                             </imageView>
                             <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Swipe up to share" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V5B-oh-LI9">
-                                <rect key="frame" x="10" y="10" width="160.5" height="29"/>
+                                <rect key="frame" x="80" y="109" width="160.5" height="29"/>
                                 <gestureRecognizers/>
                                 <fontDescription key="fontDescription" name="Delm-Medium" family="Delm" pointSize="26"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -58,7 +58,7 @@
                                 </variation>
                             </label>
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7CO-2z-U1t" userLabel="GridView" customClass="GridView" customModule="Instagrid" customModuleProvider="target">
-                                <rect key="frame" x="156" y="45" width="256" height="256"/>
+                                <rect key="frame" x="29" y="153" width="262" height="262"/>
                                 <color key="backgroundColor" systemColor="systemGray4Color"/>
                                 <gestureRecognizers/>
                                 <constraints>
@@ -66,13 +66,13 @@
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="ivC-Ra-R5C" userLabel="Layout Stack View">
-                                <rect key="frame" x="465" y="45" width="73" height="256"/>
+                                <rect key="frame" x="39.5" y="459" width="241" height="69"/>
                                 <subviews>
                                     <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wjh-gc-hca" userLabel="ViewLayout1">
-                                        <rect key="frame" x="0.0" y="0.0" width="73" height="75.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="67" height="69"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wgi-UM-3ks">
-                                                <rect key="frame" x="0.0" y="0.0" width="73" height="75.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="67" height="69"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="layout1" backgroundImage="layout1">
                                                     <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -83,7 +83,7 @@
                                                 </connections>
                                             </button>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="selected" translatesAutoresizingMaskIntoConstraints="NO" id="dbV-6t-tcI">
-                                                <rect key="frame" x="0.0" y="0.0" width="73" height="75.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="67" height="69"/>
                                             </imageView>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -103,10 +103,10 @@
                                         </constraints>
                                     </view>
                                     <view tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Erd-q1-BDw" userLabel="ViewLayout2">
-                                        <rect key="frame" x="0.0" y="90.5" width="73" height="75"/>
+                                        <rect key="frame" x="87" y="0.0" width="67" height="69"/>
                                         <subviews>
                                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bZT-vf-8Fo">
-                                                <rect key="frame" x="0.0" y="0.0" width="73" height="75"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="67" height="69"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="layout2" backgroundImage="layout2">
                                                     <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -116,7 +116,7 @@
                                                 </connections>
                                             </button>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="selected" translatesAutoresizingMaskIntoConstraints="NO" id="Yci-Pg-DBv">
-                                                <rect key="frame" x="0.0" y="0.0" width="73" height="75"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="67" height="69"/>
                                             </imageView>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -132,10 +132,10 @@
                                         </constraints>
                                     </view>
                                     <view tag="3" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="obE-tg-bhr" userLabel="ViewLayout3">
-                                        <rect key="frame" x="0.0" y="180.5" width="73" height="75.5"/>
+                                        <rect key="frame" x="174" y="0.0" width="67" height="69"/>
                                         <subviews>
                                             <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jA0-v6-947">
-                                                <rect key="frame" x="0.0" y="0.0" width="73" height="75.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="67" height="69"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="layout3" backgroundImage="layout3">
                                                     <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -145,7 +145,7 @@
                                                 </connections>
                                             </button>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="selected" translatesAutoresizingMaskIntoConstraints="NO" id="SDf-lx-wGo">
-                                                <rect key="frame" x="0.0" y="0.0" width="73" height="75.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="67" height="69"/>
                                             </imageView>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -342,27 +342,22 @@
                             </mask>
                         </variation>
                         <connections>
-                            <outletCollection property="gestureRecognizers" destination="QoG-PZ-66w" appends="YES" id="ezQ-2E-eVF"/>
-                            <outletCollection property="gestureRecognizers" destination="luL-KV-nJO" appends="YES" id="kmM-PP-yuD"/>
+                            <outletCollection property="gestureRecognizers" destination="EzS-vS-axP" appends="YES" id="Ry9-TC-Rqv"/>
                         </connections>
                     </view>
                     <navigationItem key="navigationItem" id="sOv-Tn-jFE"/>
                     <connections>
                         <outlet property="gridView" destination="7CO-2z-U1t" id="gpp-1v-i9r"/>
+                        <outlet property="swipeGesture" destination="EzS-vS-axP" id="RAM-hB-UcH"/>
                         <outletCollection property="layoutButtonSelectedMark" destination="dbV-6t-tcI" collectionClass="NSMutableArray" id="oIE-d5-F4r"/>
                         <outletCollection property="layoutButtonSelectedMark" destination="Yci-Pg-DBv" collectionClass="NSMutableArray" id="vxd-uf-NUp"/>
                         <outletCollection property="layoutButtonSelectedMark" destination="SDf-lx-wGo" collectionClass="NSMutableArray" id="BKz-QQ-uFF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <swipeGestureRecognizer direction="up" id="QoG-PZ-66w" userLabel="Swipe Up Gesture">
+                <swipeGestureRecognizer direction="left" id="EzS-vS-axP" userLabel="Swipe Gesture">
                     <connections>
-                        <action selector="swipeGrid:" destination="BYZ-38-t0r" id="48A-WJ-ICJ"/>
-                    </connections>
-                </swipeGestureRecognizer>
-                <swipeGestureRecognizer direction="left" id="luL-KV-nJO" userLabel="Swipe Left Gesture">
-                    <connections>
-                        <action selector="swipeGrid:" destination="BYZ-38-t0r" id="RDa-VJ-UOJ"/>
+                        <action selector="swipeGrid:" destination="BYZ-38-t0r" id="ULo-It-KGG"/>
                     </connections>
                 </swipeGestureRecognizer>
             </objects>

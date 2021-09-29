@@ -11,18 +11,26 @@ class GridViewController: UIViewController {
     
     @IBOutlet weak var gridView: GridView!
     @IBOutlet var layoutButtonSelectedMark: [UIImageView]!
+    @IBOutlet var swipeGesture: UISwipeGestureRecognizer!
     
     let imagePicker = UIImagePickerController()
-    var gridIsEmpty = true
+    private var gridIsEmpty = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
         imagePicker.delegate = self
+        swipeGesture.direction = .up
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         setUpGridView()
+    }
+    
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+        let isPortrait = UIDevice.current.orientation.isPortrait
+        swipeGesture.direction = isPortrait ? .up : .left
     }
     
     // MARK: - IBActions
@@ -33,16 +41,8 @@ class GridViewController: UIViewController {
         setUpButtons(with: layout)
     }
     
-    @IBAction func swipeGrid(_ sender: UISwipeGestureRecognizer) {
-        let orientationDevice = UIDevice.current.orientation
-        let direction = sender.direction
-        
-        if orientationDevice.isPortrait && direction == .up {
-            gridIsEmpty ? showAlertEmptyGrid(with: .up) : swipe(by: .up)
-        }
-        if orientationDevice.isLandscape && direction == .left {
-            gridIsEmpty ? showAlertEmptyGrid(with: .left) : swipe(by: .left)
-        }
+    @IBAction func swipeGrid(_ sender: Any) {
+        gridIsEmpty ? showAlertEmptyGrid() : swipe()
     }
 }
 
@@ -104,21 +104,15 @@ extension GridViewController: UIImagePickerControllerDelegate, UINavigationContr
 
 extension GridViewController {
    
-    private func swipe(by direction: UISwipeGestureRecognizer.Direction) {
+    private func swipe() {
         let screenHeight = UIScreen.main.bounds.height
         let destinationUp = CGAffineTransform(translationX: 0, y: -screenHeight)
         
         let screenWidth = UIScreen.main.bounds.width
         let destinationLeft = CGAffineTransform(translationX: -screenWidth, y: 0)
         
-        switch direction {
-        case .up: sendGridView(destinationUp)
-        case .left: sendGridView(destinationLeft)
-        default: break
-        }
-    }
-    
-    private func sendGridView(_ transform: CGAffineTransform) {
+        let transform = swipeGesture.direction == .up ? destinationUp : destinationLeft
+        
         gridView.animation {
             self.gridView.transform = transform
         } completion: { (true) in
@@ -137,6 +131,7 @@ extension GridViewController {
                                                           applicationActivities: nil)
         self.present(activityController, animated: true)
         
+        //action after activityController
         activityController.completionWithItemsHandler = { [self] (_, success, _, _) in
             if success {
                 gridView.animation({
@@ -155,14 +150,14 @@ extension GridViewController {
 
 extension GridViewController {
     
-    func showAlertEmptyGrid(with direction: UISwipeGestureRecognizer.Direction) {
+    func showAlertEmptyGrid() {
         let alertVC = UIAlertController(
             title: "Oups...!",
             message: "Do you want to share a grid without photos",
             preferredStyle: .actionSheet)
         
         let shareAction = UIAlertAction(title: "Share an empty grid", style: .destructive) { share in
-            self.swipe(by: direction)
+            self.swipe()
         }
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
         
